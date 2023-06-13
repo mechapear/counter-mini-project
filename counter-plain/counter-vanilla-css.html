@@ -2,34 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Counter</title>
     <style>
       :root {
-        --primary-color: #4f46e5;
-        --secondary-color: #6366f1;
         --text-color: #0f172a;
-        --text-button-color: #f3f4f6;
+        --button-text-color: #f3f4f6;
+        --button-color: #4f46e5;
+        /* --button-hover-color: #6366f1; */
+        --button-hover-color: color-mix(
+          in srgb,
+          var(--button-color) 85%,
+          white
+        );
         --background: #ffcf21;
       }
 
-      html,
+      * {
+        box-sizing: border-box;
+      }
+
       body {
-        font-size: 1rem;
-        height: 500px;
         background-color: var(--background);
+        margin: 0;
+        color: var(--text-color);
       }
 
       #main-wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100vh; /* 100% of the height of the viewport. */
+        /* another way to align content in the center of the page
+        display: grid;
+        place-items: center; 
+        */
+        min-height: 100vh; /* 100% of the height of the viewport./ it might not include the height of the address bar/ tab bar. When address bar expand, it might cover somepart of the content*/
+        min-height: 100svh; /* small-viewport height / assume UIs are dynamically expanded and retracted to be expanded. - show full content*/
+        padding: 1.5rem;
       }
 
       #counter-card {
         width: 100%;
         max-width: 20rem;
-        box-sizing: border-box;
         border-radius: 0.5rem;
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
         background-color: white;
@@ -44,22 +58,21 @@
 
       #output {
         font-size: 8rem;
-        color: var(--text-color);
       }
 
       #add-input {
         font-size: 2rem;
-        color: var(--text-button-color);
-        background-color: var(--primary-color);
+        color: var(--button-text-color);
+        background-color: var(--button-color);
         box-sizing: border-box;
-        border: 1px solid var(--secondary-color);
-        border-radius: 100%;
-        padding: 1rem 1.5rem ;
+        border: 1px solid var(--button-hover-color);
+        border-radius: 50%;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
       }
 
       #add-input:hover {
-        background-color: var(--secondary-color);
-        cursor: pointer;
+        background-color: var(--button-hover-color);
       }
     </style>
   </head>
