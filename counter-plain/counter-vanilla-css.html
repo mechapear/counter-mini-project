@@ -99,10 +99,12 @@
         <h1 id="header">Counter</h1>
         <section>
           <output id="output">0</output>
-          <div id="input-wrapper">
-            <input id="input" type="number" />
-            <button id="add-input" onclick="addToOutput()">+</button>
-          </div>
+          <!-- using form for better user experience, user can enter instead of click on the button -->
+          <form id="input-wrapper" onsubmit="addToOutput(event)">
+            <!-- we have to required user's input -->
+            <input id="input" type="number" required />
+            <button id="add-input" type="submit">+</button>
+          </form>
         </section>
       </section>
     </div>
@@ -111,8 +113,19 @@
       const outputEl = document.getElementById('output')
       const inputEl = document.getElementById('input')
 
-      function addToOutput() {
-        let newOutput = parseInt(outputEl.value) + parseInt(inputEl.value)
+      function addToOutput(event) {
+        // Wed don't want the web page to refresh everytime when user clicks on the incremental button. 
+        event.preventDefault()
+
+        // Get the value of each element
+        const inputValue = inputEl.value
+        const outputValue = outputEl.value
+
+        // .value is a string we have to convert it to a number first
+        let newOutput = parseInt(outputValue) + parseInt(inputValue)
+
+        // We don't want the output to go below 0, so we use Math.max.
+        // If output is less then 0, we'll display 0.
         outputEl.innerHTML = Math.max(newOutput, 0)
       }
     </script>
