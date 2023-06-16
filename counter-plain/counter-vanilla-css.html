@@ -6,12 +6,20 @@
     <title>Counter</title>
     <style>
       :root {
+        --primary-color: #4f46e5;
+        --secondary-color: #ffcf21;
+
         --text-color: #0f172a;
+        --input-box: #9ca3af;
         --button-text-color: #f3f4f6;
-        --button-color: #4f46e5;
+        --button-color: var(--primary-color);
         /* --button-hover-color: #6366f1; */
-        --button-hover-color: color-mix(in srgb,var(--button-color) 85%,white);
-        --background: #ffcf21;
+        --button-hover-color: color-mix(
+          in srgb,
+          var(--button-color) 85%,
+          white
+        );
+        --background: var(--secondary-color);
       }
 
       * {
@@ -56,14 +64,26 @@
         font-size: 8rem;
       }
 
-      #add-input {
+      #input-wrapper {
+        display: grid;
+        grid-auto-flow: column;
+      }
+
+      #input {
         font-size: 2rem;
+        width: 10rem;
+        border: 1px solid var(--input-box);
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+      }
+
+      #add-input {
+        font-size: 1.5rem;
         color: var(--button-text-color);
         background-color: var(--button-color);
-        box-sizing: border-box;
         border: 1px solid var(--button-hover-color);
-        border-radius: 50%;
-        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
         cursor: pointer;
       }
 
@@ -79,8 +99,8 @@
         <h1 id="header">Counter</h1>
         <section>
           <output id="output">0</output>
-          <div>
-            <input id="input" type="number">
+          <div id="input-wrapper">
+            <input id="input" type="number" />
             <button id="add-input" onclick="addToOutput()">+</button>
           </div>
         </section>
