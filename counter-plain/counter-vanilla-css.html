@@ -65,17 +65,17 @@
       }
 
       #input-wrapper {
-        display: grid;
-        grid-auto-flow: column;
-        grid-gap: 0.5em;
+        display: flex;
+        column-gap: 0.5em;
       }
 
       #input {
         font-size: 2rem;
-        width: 10rem;
+        min-width: 0;
         border: 1px solid var(--input-box);
         border-radius: 0.5rem;
         padding: 0.5rem 1rem;
+        justify-self: center;
       }
 
       #plus-button, #minus-button {
@@ -86,7 +86,7 @@
         border-radius: 0.5rem;
         padding: 0.5rem 1rem;
         cursor: pointer;
-        min-width: 42px;
+        min-width: 44px;
       }
 
       #plus-button:hover, #minus-button:hover {
