@@ -67,6 +67,7 @@
       #input-wrapper {
         display: grid;
         grid-auto-flow: column;
+        grid-gap: 0.5em;
       }
 
       #input {
@@ -77,7 +78,7 @@
         padding: 0.5rem 1rem;
       }
 
-      #add-input {
+      #add-input, #minus-input {
         font-size: 1.5rem;
         color: var(--button-text-color);
         background-color: var(--button-color);
@@ -85,9 +86,10 @@
         border-radius: 0.5rem;
         padding: 0.5rem 1rem;
         cursor: pointer;
+        min-width: 42px;
       }
 
-      #add-input:hover {
+      #add-input:hover, #minus-input:hover {
         background-color: var(--button-hover-color);
       }
     </style>
@@ -101,6 +103,7 @@
           <output id="output">0</output>
           <!-- using form for better user experience, user can enter instead of click on the button -->
           <form id="input-wrapper" onsubmit="addToOutput(event)">
+            <button id="minus-input" type="submit">-</button>
             <!-- we have to required user's input -->
             <input id="input" type="number" required />
             <button id="add-input" type="submit">+</button>
