@@ -78,7 +78,7 @@
         padding: 0.5rem 1rem;
       }
 
-      #add-input, #minus-input {
+      #plus-button, #minus-button {
         font-size: 1.5rem;
         color: var(--button-text-color);
         background-color: var(--button-color);
@@ -89,7 +89,7 @@
         min-width: 42px;
       }
 
-      #add-input:hover, #minus-input:hover {
+      #plus-button:hover, #minus-button:hover {
         background-color: var(--button-hover-color);
       }
     </style>
@@ -103,10 +103,10 @@
           <output id="output">0</output>
           <!-- using form for better user experience, user can enter instead of click on the button -->
           <form id="input-wrapper" onsubmit="modifyOutput(event)">
-            <button id="minus-input" type="submit">-</button>
+            <button id="minus-button" type="submit">-</button>
             <!-- we have to required user's input -->
             <input id="input" type="number" required />
-            <button id="add-input" type="submit">+</button>
+            <button id="plus-button" type="submit">+</button>
           </form>
         </section>
       </section>
@@ -115,6 +115,8 @@
     <script>
       const outputEl = document.getElementById('output')
       const inputEl = document.getElementById('input')
+      const minusBtn = document.getElementById('minus-button')
+      const plusBtn = document.getElementById('plus-button')
 
       function modifyOutput(event) {
         // Wed don't want the web page to refresh everytime when user clicks on the incremental button. 
@@ -123,16 +125,16 @@
         // Get the value of each element
         const inputValue = inputEl.value
         const outputValue = outputEl.value
-        // get ID of submit button
-        const submitter = event.submitter.id 
-
+    
         let newOutput = 0
-        if(submitter === "add-input"){
+        // compare with element reference
+        if(event.submitter === plusBtn){
           // .value is a string we have to convert it to a number first
           newOutput = parseInt(outputValue) + parseInt(inputValue)
-        } else if(submitter === "minus-input"){
+        } else if(event.submitter === minusBtn){
           newOutput = parseInt(outputValue) - parseInt(inputValue)
         }
+        // update output
         // We don't want the output to go below 0, so we use Math.max.
         // If output is less then 0, we'll display 0.
         outputEl.innerHTML = Math.max(newOutput, 0)
