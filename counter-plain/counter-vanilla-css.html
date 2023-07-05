@@ -102,11 +102,11 @@
         <section>
           <output id="output">0</output>
           <!-- using form for better user experience, user can enter instead of click on the button -->
-          <form id="input-wrapper">
-            <button id="minus-button" type="submit">-</button>
+          <form id="input-wrapper"> <!-- onsubmit="modifyOutput(event)" -->
+            <button id="minus-button">-</button>
             <!-- we have to required user's input -->
             <input id="input" type="number" required />
-            <button id="plus-button" type="submit">+</button>
+            <button id="plus-button">+</button>
           </form>
         </section>
       </section>
@@ -126,7 +126,7 @@
         event.preventDefault()
         
         // Get the value of each element
-        const inputValue = inputEl.value
+        const inputValue = inputEl.value || '0' // default value of input is 0, handle NaN output
         const outputValue = outputEl.value
     
         let newOutput = 0
