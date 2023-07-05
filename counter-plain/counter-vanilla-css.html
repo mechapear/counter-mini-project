@@ -102,7 +102,7 @@
         <section>
           <output id="output">0</output>
           <!-- using form for better user experience, user can enter instead of click on the button -->
-          <form id="input-wrapper" onsubmit="modifyOutput(event)">
+          <form id="input-wrapper">
             <button id="minus-button" type="submit">-</button>
             <!-- we have to required user's input -->
             <input id="input" type="number" required />
@@ -118,6 +118,9 @@
       const minusBtn = document.getElementById('minus-button')
       const plusBtn = document.getElementById('plus-button')
 
+      minusBtn.addEventListener("click",modifyOutput)
+      plusBtn.addEventListener("click",modifyOutput)
+
       function modifyOutput(event) {
         // Wed don't want the web page to refresh everytime when user clicks on the incremental button. 
         event.preventDefault()
@@ -128,10 +131,10 @@
     
         let newOutput = 0
         // compare with element reference
-        if(event.submitter === plusBtn){
+        if(event.srcElement === plusBtn){
           // .value is a string we have to convert it to a number first
           newOutput = parseInt(outputValue) + parseInt(inputValue)
-        } else if(event.submitter === minusBtn){
+        } else if(event.srcElement === minusBtn){
           newOutput = parseInt(outputValue) - parseInt(inputValue)
         }
         // update output
