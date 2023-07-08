@@ -422,6 +422,18 @@ video {
   display: none;
 }
 
+:root {
+  --primary-color: #5b21b6;
+  --secondary-color: #ffcf21;
+  --text-color: #0f172a;
+  --card-color: white;
+  --input-box: #9ca3af;
+  --button-text-color: #f3f4f6;
+  --button-color: var(--primary-color);
+  --button-hover-color: color-mix(in srgb, var(--button-color) 80%, white);
+  --background-color: var(--secondary-color);
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -522,9 +534,119 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+.m-0 {
+  margin: 0px;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.min-w-0 {
+  min-width: 0px;
+}
+
+.min-w-\[44px\] {
+  min-width: 44px;
+}
+
+.max-w-xs {
+  max-width: 20rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.border-button {
+  border-color: var(--button-color);
+}
+
+.border-input {
+  border-color: var(--input-box);
+}
+
+.bg-button {
+  background-color: var(--button-color);
+}
+
+.bg-card {
+  background-color: var(--card-color);
+}
+
+.bg-page-bg {
+  background-color: var(--background-color);
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-3xl {
@@ -532,10 +654,30 @@ video {
   line-height: 2.25rem;
 }
 
-.font-bold {
-  font-weight: 700;
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
-.underline {
-  text-decoration-line: underline;
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.text-button-text {
+  color: var(--button-text-color);
+}
+
+.text-text-color {
+  color: var(--text-color);
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:bg-button-hover:hover {
+  background-color: var(--button-hover-color);
 }
