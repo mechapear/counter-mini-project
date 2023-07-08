@@ -11,7 +11,7 @@
     --input-box: #9ca3af;
     --button-text-color: #f3f4f6;
     --button-color: var(--primary-color);
-    --button-hover-color: color-mix(in srgb, var(--button-color) 80%, white);
+    --button-hover-color: color-mix(in srgb, var(--button-color) 85%, white);
     --background-color: var(--secondary-color);
   }
 }

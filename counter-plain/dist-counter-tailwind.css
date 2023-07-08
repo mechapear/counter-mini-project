@@ -430,7 +430,7 @@ video {
   --input-box: #9ca3af;
   --button-text-color: #f3f4f6;
   --button-color: var(--primary-color);
-  --button-hover-color: color-mix(in srgb, var(--button-color) 80%, white);
+  --button-hover-color: color-mix(in srgb, var(--button-color) 85%, white);
   --background-color: var(--secondary-color);
 }
 
@@ -680,4 +680,23 @@ video {
 
 .hover\:bg-button-hover:hover {
   background-color: var(--button-hover-color);
+}
+
+.focus\:border-button:focus {
+  border-color: var(--button-color);
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus\:ring-1:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus\:ring-button:focus {
+  --tw-ring-color: var(--button-color);
 }
