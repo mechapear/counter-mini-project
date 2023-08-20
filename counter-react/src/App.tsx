@@ -1,3 +1,5 @@
+import Button from '@/lib/components/Button.tsx'
+
 export default function App(): JSX.Element {
   return (
     <div
@@ -18,12 +20,7 @@ export default function App(): JSX.Element {
           {/*using form for better user experience, user can enter instead of click on the button*/}
           <form id="input-wrapper" className="flex gap-2 mt-4">
             {/*onsubmit="modifyOutput(event)"*/}
-            <button
-              id="minus-button"
-              className="text-2xl text-button-text bg-button rounded-lg border-solid border-button py-2 px-4 cursor-pointer min-w-[44px] hover:bg-button-hover"
-            >
-              -
-            </button>
+            <Button id="minus-button">-</Button>
             {/*we have to required user's input*/}
             <input
               id="input"
@@ -31,12 +28,7 @@ export default function App(): JSX.Element {
               required
               className="text-3xl min-w-0 rounded-lg border border-solid border-input justify-self-center py-2 px-4 focus:outline-none focus:ring-1 focus:ring-button focus:border-button"
             />
-            <button
-              id="plus-button"
-              className="text-2xl text-button-text bg-button rounded-lg border-solid border-button py-2 px-4 cursor-pointer min-w-[44px] hover:bg-button-hover"
-            >
-              +
-            </button>
+            <Button id="plus-button">+</Button>
           </form>
         </section>
       </section>
