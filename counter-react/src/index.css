@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-color: #5b21b6;
+    --secondary-color: #ffcf21;
+    --text-color: #0f172a;
+    --card-color: white;
+    --input-box: #9ca3af;
+    --button-text-color: #f3f4f6;
+    --button-color: var(--primary-color);
+    --button-hover-color: color-mix(in srgb, var(--button-color) 85%, white);
+    --background-color: var(--secondary-color);
+  }
+}
